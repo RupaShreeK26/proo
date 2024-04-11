@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Members</title>
+        <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css">
+
+</head>
+<body>
+<h2 align="center">Library Members</h2>
+<a th:href="@{/delete/vehicle}">Delete Vehicle Details</a>
+<table>
+    <thead>
+        <tr>
+            <th>Aadhar Number</th>
+            <th>Owner Name</th>
+            <th>Owner Contact</th>
+            <th>Owner Address</th>
+            <th>Vehicle Category</th>
+            <th>Maker's Class</th>
+            <th>Manufactured Date</th>
+            <th>Fuel used</th>
+            
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="dV : ${displayVehicle}">
+            <td th:text="${dV.aadharNumber}"></td>
+            <td th:text="${dV.ownerName}"></td>
+            <td th:text="${dV.ownerContact}"></td>
+            <td th:text="${dV.owneraddress}"></td>
+            <td th:text="${dV.vehicleCategory}"></td>
+            <td th:text="${dV.makersClass}"></td>
+            <td th:text="${dV.manufacturedDate}"></td>
+            <td th:text="${dV.fuelUsed}"></td>
+            
+          
+            
+
+</tr>
+    </tbody>
+</table>
+<!-- <a th:href="@{/member/new}">Register New Member</a>
+<a href="/book">Home</a> -->
+</body>
+</html>

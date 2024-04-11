@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="" th:href="@{/LicenseRegistration.css}">
+    <title>New License</title>
+</head>
+
+<body>
+    <div class="signup-box">
+        <h2>License Registration</h2>
+          <form th:action="@{/admin/VehicleRegister}" th:object="${vehicleModel}"  method="post">
+
+             <div class="user-box">
+                <input  type="text" th:field="*{aadharNumber}" class="form-control" placeholder="Aadhar Number" min="12" max="12" required />
+            </div> 
+
+            <div class="user-box">
+                <input  type="text" th:field="*{ownerName}" class="form-control" placeholder="Owner Name" min=18 max= 80 required />
+            </div>
+            
+             <div class="user-box">
+                <input type="text" th:field="*{ownerContact}" class="form-control" placeholder="Owner Contact" pattern="[789][0-9]{9}" min="10" required />
+            </div>
+
+            <div class="user-box">
+                <input type="text" th:field="*{owneraddress}" class="form-control" placeholder="Owner Address"  required />
+            </div>
+            
+            <select name="vehicleType" class="datalist" th:field="*{vehicleCategory}">
+    <datalist id="VehicleType">
+        <option class="selp" value="none">Select Your Type</option>
+        <option class="selq" value="Two Wheeler">Two Wheeler</option>
+        <option class="selq" value="Four Wheeler">Four Wheeler</option>    
+    </datalist>
+</select>
+
+            <div class="user-box">
+                <input type=text   th:field="*{makersClass}" class="form-control"  placeholder="Maker's Class" required />
+            </div>
+
+            <div class="user-box">
+                <input type="date" th:field="*{manufacturedDate}" class="form-control"placeholder="Manufactured Date" required />
+            </div> 
+            
+            <select name="fuelType" class="datalist" th:field="*{fuelUsed}">
+    <datalist id="type">
+        <option class="selp" value="none">Select Your Vehicle Fuel</option>
+        <option class="selq" value="Petrol">Petrol</option>
+        <option class="selq" value="Diesel">Diesel</option>  
+         <option class="selq" value="EV">EV</option>      
+    </datalist>
+</select>
+            
+            <a class="submit"target="_blank" th:href="@{/admin/home}">
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </a>
+
+           <!--  <button type="submit">Submit</button> -->
+
+            
+        </form>
+        
+        
+    </div>
+</body>
+
+</html>

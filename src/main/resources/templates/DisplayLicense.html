@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Members</title>
+        <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css">
+
+</head>
+<body>
+<h2 align="center">License Holders</h2>
+<a th:href="@{/holder/update}">Update license Holders</a>
+<a th:href="@{/holder/delete}">Delete license Holders</a>
+<a href="/admin/home">Back</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Age</th>
+            <th>Aadhar Number</th>
+            <th>Mobile number</th>
+            <th>State</th>
+            <th>Address</th>
+            <th>Date Of Issue</th>
+            <th>License Number</th>
+            
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="dL : ${displayLicense}">
+            <td th:text="${dL.fullName}"></td>
+            <td th:text="${dL.age}"></td>
+            <td th:text="${dL.aadharNumber}"></td>
+            <td th:text="${dL.mobileNumber}"></td>
+            <td th:text="${dL.state}"></td>
+            <td th:text="${dL.address}"></td>
+            <td th:text="${dL.dateOfIssue}"></td>
+            <td th:text="${dL.licenseNumber}"></td>
+            
+           <!--  <td><a th:href="@{/member/{id}(id=${member.id})}">Edit</a></td>
+            <td><a th:href="@{/member/delete/{id}(id=${member.id})}">DELETE</a></td> -->
+
+</tr>
+    </tbody>
+</table>
+<!-- <a th:href="@{/member/new}">Register New Member</a>
+<a href="/book">Home</a> -->
+</body>
+</html>

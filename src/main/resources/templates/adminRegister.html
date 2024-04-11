@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Admin SignUp</title>
+  <link rel="stylesheet" href="" th:href="@{/adminRegistration.css}">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css.map">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js">
+	</head>
+	<body>
+		<div class="form">
+			
+			<h1> Admin Registration!</h1>
+
+			<form th:action="@{/adminRegister}" th:object="${adminModel}" method="post">
+				<input type="text"  name="" th:field="*{adminname}" placeholder="User Name"><br>
+				<input type="text"  name="" th:field="*{fullname}" placeholder="Full Name"><br>
+				<input type="text"  name="" th:field="*{mobilenumber}" placeholder="Phone"><br>
+				<input type="text"  name="" th:field="*{address}" placeholder="Address"><br>
+				<input type="text"  name="" th:field="*{email}" placeholder="Email"><br>
+				<input type="password"  name="password" th:field="*{password}"  placeholder="Password"><br>
+				
+				<br>
+			<select name="countries" class="datalist" th:field="*{countries}">
+    <datalist id="state">
+        <option class="selp" value="none">Select Your State</option>
+        <option class="selq" value="Tamil Nadu">TamilNadu</option>
+        <option class="selq" value="Karnataka">Karnataka</option>
+        <option class="selq" value="Kerala">Kerala</option>
+        <option class="selq" value="Andhra Pradesh">Andhra Pradesh</option>
+        <option class="selq" value="Madhya Pradesh">Madhya Pradesh</option>
+        <option class="selq" value="Maharastra">Maharashtra</option>
+        <option class="selq" value="Gujarat">Gujarat</option>
+        <option class="selq" value="Goa">Goa</option>
+        <option class="selq" value="Bihar">Bihar</option>
+        <option class="selq" value="Assam">Assam</option>
+        <option class="selq" value="Delhi">Delhi</option>
+        <option class="selq" value="Chattisgarh">Chhattisgarh</option>
+        <option class="selq" value="Jharkhand">Jharkhand</option>
+        <option class="selq" value="Himachal Pradesh">Himachal Pradesh</option>
+        <option class="selq" value="Manipur">Manipur</option>
+    </datalist>
+</select>
+
+				
+				<input type="radio" name="gender" value="male" checked><span class="rad">Male</span>
+				<input type="radio" name="gender" value="female"> <span class="rad">Female</span>
+				<input type="radio" name="gender" value="other">
+				<span class="rad">Other</span>
+				<a class="submit"target="_blank" >
+				<button type="submit" class="btn btn-primary">Sign Up</button></a>
+				<h3>Already have account ? <a class="aclk" th:href="@{adminLog}">Click here!</a></h3>
+			</form>
+		</div>
+	</body>
+</html>
